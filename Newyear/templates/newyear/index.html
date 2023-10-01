@@ -1,0 +1,15 @@
+{% extends 'newyear/layout.html' %}
+
+{% block title %}
+    It is New year
+{% endblock title %}
+
+{% block content %}
+
+    {% if date %}
+    <h1>YES</h1>
+    {% else %}
+    <h1>NO</h1>
+    {% endif %}
+
+{% endblock content %}
