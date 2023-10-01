@@ -1,0 +1,28 @@
+{% extends 'flight/layout.html' %}
+
+{% block title %} Flight details {% endblock title %}
+
+{% block content %}
+    <h1>Flight {{flights.id}}</h1>
+
+    <ul>
+        <li>Origin : {{flights.origin}}</li>
+        <li>Destination : {{flights.destination}}</li>
+        <li>Duration : {{flights.duration}}</li>
+    </ul>
+    <h3>Passengers</h3>
+    <ul>
+        {% for passenger in passengers %}
+        <li>{{passenger}}</li>
+        {% empty %}
+        <li>No Passengers</li>
+        {% endfor %}
+    </ul>
+<form action="" method="POST">
+    <select name="passenger" id="">
+        <option value=""></option>
+    </select>
+    <input type="submit">
+</form>
+<a href="{% url 'flight' %}">Back to Flight Page</a>
+{% endblock content %}
